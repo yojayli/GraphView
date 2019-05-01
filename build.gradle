@@ -60,5 +60,6 @@ makeJar.dependsOn(clearJar, build)
 apply from: './maven_push.gradle'
 
 repositories {
+    jcenter()
     google()
 }

@@ -23,7 +23,7 @@ import android.util.Log;
 import com.jjoe64.graphview.GraphView;
 
 import java.lang.ref.WeakReference;
-import java.util.ArrayList;
+import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -49,7 +49,7 @@ public abstract class BaseSeries<E extends DataPointInterface> implements Series
     /**
      * holds the data
      */
-    final private List<E> mData = new ArrayList<E>();
+    final private List<E> mData = new CopyOnWriteArrayList<E>();
 
     /**
      * stores the used coordinates to find the
@@ -100,7 +100,7 @@ public abstract class BaseSeries<E extends DataPointInterface> implements Series
      * creates series without data
      */
     public BaseSeries() {
-        mGraphViews = new ArrayList<>();
+        mGraphViews = new CopyOnWriteArrayList<>();
     }
 
     /**
@@ -110,7 +110,7 @@ public abstract class BaseSeries<E extends DataPointInterface> implements Series
      *              important: array has to be sorted from lowest x-value to the highest
      */
     public BaseSeries(E[] data) {
-        mGraphViews = new ArrayList<>();
+        mGraphViews = new CopyOnWriteArrayList<>();
         for (E d : data) {
             mData.add(d);
         }

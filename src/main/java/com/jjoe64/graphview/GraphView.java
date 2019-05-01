@@ -34,7 +34,7 @@ import com.jjoe64.graphview.series.BaseSeries;
 import com.jjoe64.graphview.series.Series;
 
 import java.io.ByteArrayOutputStream;
-import java.util.ArrayList;
+import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.List;
 
 /**
@@ -213,7 +213,7 @@ public class GraphView extends View {
         mGridLabelRenderer = new GridLabelRenderer(this);
         mLegendRenderer = new LegendRenderer(this);
 
-        mSeries = new ArrayList<Series>();
+        mSeries = new CopyOnWriteArrayList<Series>();
         mPaintTitle = new Paint();
 
         mTapDetector = new TapDetector();
